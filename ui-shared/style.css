@@ -1,0 +1,88 @@
+:root {
+  /* Colors */
+  --bg-color: #0b2f2f;
+  --text-main: #e0e0e0;
+  --text-muted: #8aa9a9;
+  --accent-primary: #00bcd4; /* Cyan/Teal */
+  --accent-secondary: #009688;
+  
+  /* Neumorphism tokens */
+  --shadow-light: rgba(255, 255, 255, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  
+  /* Spacing */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-full: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  height: 100vh;
+  overflow: hidden; /* For that fixed dashboard feel */
+}
+
+/* Helper Classes */
+.neu-card {
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark), 
+    -8px -8px 16px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.neu-inset {
+  border-radius: var(--radius-full);
+  background: var(--bg-color);
+  box-shadow: 
+    inset 6px 6px 12px var(--shadow-dark), 
+    inset -6px -6px 12px var(--shadow-light);
+}
+
+.neu-btn {
+  background: var(--bg-color);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+  box-shadow: 
+    4px 4px 8px var(--shadow-dark), 
+    -4px -4px 8px var(--shadow-light);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neu-btn:active, .neu-btn.active {
+  box-shadow: 
+    inset 4px 4px 8px var(--shadow-dark), 
+    inset -4px -4px 8px var(--shadow-light);
+  color: var(--accent-primary);
+}
+
+.neu-btn:hover {
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+p, span, small {
+  font-weight: 300;
+  color: var(--text-muted);
+}

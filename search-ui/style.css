@@ -1,0 +1,234 @@
+/* Layout Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 200px;
+    height: 85vh;
+    /* Leave space for dock */
+    padding: 40px;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding-top: 10vh;
+    /* Adjust vertical position */
+}
+
+.greeting-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    border-radius: 40px;
+    /* Extra round */
+}
+
+.date-display {
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.time-display {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.greeting-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+/* Center Section */
+.center-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: var(--radius-full);
+}
+
+.search-icon {
+    color: var(--text-muted);
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+#searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    outline: none;
+    font-family: inherit;
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: var(--accent-primary);
+}
+
+.search-submit-btn {
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.engine-selector {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.engine-selector .pill {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: var(--radius-full);
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 25px;
+    height: 100%;
+    padding-top: 10vh;
+}
+
+.widget-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.widget-circle .material-icons-round {
+    font-size: 32px;
+    color: var(--accent-primary);
+}
+
+.widget-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.widget-oval {
+    /* width: 100px; */
+    padding: 15px 25px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #00e676;
+    /* Green */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00e676;
+}
+
+/* Bottom Dock */
+.dock-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.dock {
+    display: flex;
+    gap: 20px;
+    padding: 15px 30px;
+    border-radius: var(--radius-full);
+}
+
+.dock-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: var(--text-muted);
+}
+
+.dock-icon:hover {
+    color: var(--accent-primary);
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .left-section,
+    .right-section {
+        padding-top: 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .greeting-card {
+        align-items: center;
+        text-align: center;
+    }
+
+    .dock-container {
+        position: relative;
+        height: auto;
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <link rel="stylesheet" href="../ui-shared/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="dashboard-grid">
+
+        <!-- Left Section: Greeting & Time -->
+        <section class="left-section">
+            <div class="neu-card greeting-card">
+                <div class="date-display">
+                    <span id="currentDay">Monday</span>, <span id="currentDate">Jan 01</span>
+                </div>
+                <div class="time-display" id="currentTime">
+                    12:00
+                </div>
+                <div class="greeting-text" id="greetingParams">
+                    Good Morning
+                </div>
+            </div>
+        </section>
+
+        <!-- Center Section: Search -->
+        <section class="center-section">
+
+            <!-- Search Input Container -->
+            <div class="search-container neu-card">
+                <span class="material-icons-round search-icon">search</span>
+                <input type="text" id="searchInput" placeholder="Type here..." autocomplete="off">
+                <button class="icon-btn" id="voiceSearch">
+                    <span class="material-icons-round">mic</span>
+                </button>
+            </div>
+
+            <!-- Search Button -->
+            <button class="neu-btn search-submit-btn" id="searchBtn">
+                Search
+            </button>
+
+            <!-- Search Engine Selector -->
+            <div class="engine-selector">
+                <button class="neu-btn pill active" data-engine="default">Default</button>
+                <button class="neu-btn pill" data-engine="google">Google</button>
+                <button class="neu-btn pill" data-engine="duckduckgo">DuckDuckGo</button>
+                <button class="neu-btn pill" data-engine="bing">Bing</button>
+                <button class="neu-btn pill" data-engine="brave">Brave</button>
+            </div>
+
+        </section>
+
+        <!-- Right Section: Widgets -->
+        <section class="right-section">
+
+            <div class="neu-card widget-circle weather-widget">
+                <span class="material-icons-round">wb_sunny</span>
+                <span class="widget-value">24°</span>
+            </div>
+
+            <div class="neu-card widget-circle humidity-widget">
+                <span class="material-icons-round">water_drop</span>
+                <span class="widget-value">45%</span>
+            </div>
+
+            <div class="neu-card widget-oval status-widget">
+                <span class="status-dot"></span>
+                <span class="status-text">Online</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Bottom Dock -->
+    <footer class="dock-container">
+        <div class="neu-card dock">
+            <a href="https://youtube.com" class="neu-btn dock-icon"><span
+                    class="material-icons-round">play_arrow</span></a>
+            <a href="mailto:" class="neu-btn dock-icon"><span class="material-icons-round">email</span></a>
+            <a href="https://web.telegram.org" class="neu-btn dock-icon"><span
+                    class="material-icons-round">send</span></a>
+            <a href="#" class="neu-btn dock-icon"><span class="material-icons-round">phone</span></a>
+            <a href="https://twitter.com" class="neu-btn dock-icon">
+                <svg style="width:20px;fill:currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+            </a>
+            <a href="https://discord.com" class="neu-btn dock-icon"><span
+                    class="material-icons-round">discord</span></a>
+        </div>
+    </footer>
+
+    <script src="js/search.js"></script>
+    <!-- Main App Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
