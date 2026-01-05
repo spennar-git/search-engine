@@ -4,8 +4,6 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 
 import searchRoutes from "./server/routes/search.routes.js";
-import adminRoutes from "./server/routes/admin.routes.js";
-import authRoutes from "./server/routes/auth.routes.js";
 
 const app = express();
 
@@ -20,6 +18,8 @@ app.use(
     })
 );
 
+import { errorHandler } from "./server/middleware/error.middleware.js";
+
 // ROUTES
 app.use("/api", searchRoutes);
 app.use("/api/admin", adminRoutes);
@@ -29,5 +29,7 @@ app.use("/api/auth", authRoutes);
 app.get("/health", (req, res) => {
     res.json({ status: "OK" });
 });
+
+app.use(errorHandler);
 
 export default app;
